@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: darshan-portfolio-backend
+    env: docker
+    dockerfilePath: backend/Dockerfile
+    dockerContext: .
+    plan: free
+    region: oregon
+    healthCheckPath: /healthz
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: GEMINI_API_KEY
+        sync: false
